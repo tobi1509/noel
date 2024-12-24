@@ -11,6 +11,7 @@
 </head>
 <body>
     <div class="container">
+        <audio id="background-music" src="music.mp3" preload="auto"></audio>
         <div class="bgr-container">
             <div class="box-bgr">
                 <div class="moon">
@@ -252,5 +253,15 @@
     </div>
 </body>
 <script src="app.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var audio = document.getElementById('background-music');
+        audio.play().catch(function(error) {
+            document.addEventListener('click', function() {
+                audio.play();
+            }, { once: true });
+        });
+    });
+</script>
 </html>
 <!-- https://cliply.co/wp-content/uploads/2019/12/371912430_SANTA_CLAUS_400px.gif -->
